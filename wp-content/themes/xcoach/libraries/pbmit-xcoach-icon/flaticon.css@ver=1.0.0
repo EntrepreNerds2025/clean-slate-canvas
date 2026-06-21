@@ -1,0 +1,297 @@
+@font-face {
+	font-family: "flaticon_xcoach";
+	src: url("./flaticon_xcoach.ttf?3f5f43952b9e5421630fbf5c3d83e5cf") format("truetype"),
+url("./flaticon_xcoach.woff?3f5f43952b9e5421630fbf5c3d83e5cf") format("woff"),
+url("./flaticon_xcoach.woff2?3f5f43952b9e5421630fbf5c3d83e5cf") format("woff2"),
+url("./flaticon_xcoach.eot?3f5f43952b9e5421630fbf5c3d83e5cf#iefix") format("embedded-opentype"),
+url("./flaticon_xcoach.svg?3f5f43952b9e5421630fbf5c3d83e5cf#flaticon_xcoach") format("svg");
+}
+
+i[class^="flaticon-"]:before,
+i[class*="pbmit-xcoach-icon-"]:before {
+	font-family: flaticon_xcoach !important;
+	font-style: normal;
+	font-weight: normal !important;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.pbmit-xcoach-icon-training:before {
+	content: "\f101";
+}
+.pbmit-xcoach-icon-innovation:before {
+	content: "\f102";
+}
+.pbmit-xcoach-icon-financial-planning:before {
+	content: "\f103";
+}
+.pbmit-xcoach-icon-skill:before {
+	content: "\f104";
+}
+.pbmit-xcoach-icon-observation:before {
+	content: "\f105";
+}
+.pbmit-xcoach-icon-competence:before {
+	content: "\f106";
+}
+.pbmit-xcoach-icon-soft-skills:before {
+	content: "\f107";
+}
+.pbmit-xcoach-icon-challenges:before {
+	content: "\f108";
+}
+.pbmit-xcoach-icon-cardiology:before {
+	content: "\f109";
+}
+.pbmit-xcoach-icon-emotional-intelligence:before {
+	content: "\f10a";
+}
+.pbmit-xcoach-icon-professional-development:before {
+	content: "\f10b";
+}
+.pbmit-xcoach-icon-active:before {
+	content: "\f10c";
+}
+.pbmit-xcoach-icon-together:before {
+	content: "\f10d";
+}
+.pbmit-xcoach-icon-kindness:before {
+	content: "\f10e";
+}
+.pbmit-xcoach-icon-confidence:before {
+	content: "\f10f";
+}
+.pbmit-xcoach-icon-energy-drink:before {
+	content: "\f110";
+}
+.pbmit-xcoach-icon-phosphorus:before {
+	content: "\f111";
+}
+.pbmit-xcoach-icon-healthcare:before {
+	content: "\f112";
+}
+.pbmit-xcoach-icon-fat:before {
+	content: "\f113";
+}
+.pbmit-xcoach-icon-nutrition:before {
+	content: "\f114";
+}
+.pbmit-xcoach-icon-healthy:before {
+	content: "\f115";
+}
+.pbmit-xcoach-icon-diet:before {
+	content: "\f116";
+}
+.pbmit-xcoach-icon-calories-calculator:before {
+	content: "\f117";
+}
+.pbmit-xcoach-icon-fruits:before {
+	content: "\f118";
+}
+.pbmit-xcoach-icon-nutritionist:before {
+	content: "\f119";
+}
+.pbmit-xcoach-icon-recipe-book:before {
+	content: "\f11a";
+}
+.pbmit-xcoach-icon-co2-cloud:before {
+	content: "\f11b";
+}
+.pbmit-xcoach-icon-inorganic:before {
+	content: "\f11c";
+}
+.pbmit-xcoach-icon-profit:before {
+	content: "\f11d";
+}
+.pbmit-xcoach-icon-statistics:before {
+	content: "\f11e";
+}
+.pbmit-xcoach-icon-productivity:before {
+	content: "\f11f";
+}
+.pbmit-xcoach-icon-analytics:before {
+	content: "\f120";
+}
+.pbmit-xcoach-icon-franchise:before {
+	content: "\f121";
+}
+.pbmit-xcoach-icon-management:before {
+	content: "\f122";
+}
+.pbmit-xcoach-icon-career:before {
+	content: "\f123";
+}
+.pbmit-xcoach-icon-finance:before {
+	content: "\f124";
+}
+.pbmit-xcoach-icon-economic:before {
+	content: "\f125";
+}
+.pbmit-xcoach-icon-social-media-marketing:before {
+	content: "\f126";
+}
+.pbmit-xcoach-icon-system:before {
+	content: "\f127";
+}
+.pbmit-xcoach-icon-course:before {
+	content: "\f128";
+}
+.pbmit-xcoach-icon-operator:before {
+	content: "\f129";
+}
+.pbmit-xcoach-icon-organization:before {
+	content: "\f12a";
+}
+.pbmit-xcoach-icon-gym:before {
+	content: "\f12b";
+}
+.pbmit-xcoach-icon-activity:before {
+	content: "\f12c";
+}
+.pbmit-xcoach-icon-self-care:before {
+	content: "\f12d";
+}
+.pbmit-xcoach-icon-sleep:before {
+	content: "\f12e";
+}
+.pbmit-xcoach-icon-organic-food:before {
+	content: "\f12f";
+}
+.pbmit-xcoach-icon-healthcare-1:before {
+	content: "\f130";
+}
+.pbmit-xcoach-icon-breakfast:before {
+	content: "\f131";
+}
+.pbmit-xcoach-icon-charity:before {
+	content: "\f132";
+}
+.pbmit-xcoach-icon-feeding:before {
+	content: "\f133";
+}
+.pbmit-xcoach-icon-community:before {
+	content: "\f134";
+}
+.pbmit-xcoach-icon-meeting:before {
+	content: "\f135";
+}
+.pbmit-xcoach-icon-negotiation:before {
+	content: "\f136";
+}
+.pbmit-xcoach-icon-headache:before {
+	content: "\f137";
+}
+.pbmit-xcoach-icon-take-care:before {
+	content: "\f138";
+}
+.pbmit-xcoach-icon-email:before {
+	content: "\f139";
+}
+.pbmit-xcoach-icon-pin:before {
+	content: "\f13a";
+}
+.pbmit-xcoach-icon-call:before {
+	content: "\f13b";
+}
+.pbmit-xcoach-icon-life-skills:before {
+	content: "\f13c";
+}
+.pbmit-xcoach-icon-innovator:before {
+	content: "\f13d";
+}
+.pbmit-xcoach-icon-equanimity:before {
+	content: "\f13e";
+}
+.pbmit-xcoach-icon-goal:before {
+	content: "\f13f";
+}
+.pbmit-xcoach-icon-vip:before {
+	content: "\f140";
+}
+.pbmit-xcoach-icon-carbohydrates:before {
+	content: "\f141";
+}
+.pbmit-xcoach-icon-consultant:before {
+	content: "\f142";
+}
+.pbmit-xcoach-icon-consumption:before {
+	content: "\f143";
+}
+.pbmit-xcoach-icon-health-professional:before {
+	content: "\f144";
+}
+.pbmit-xcoach-icon-nephrologist:before {
+	content: "\f145";
+}
+.pbmit-xcoach-icon-stroke:before {
+	content: "\f146";
+}
+.pbmit-xcoach-icon-first-aid:before {
+	content: "\f147";
+}
+.pbmit-xcoach-icon-diagnosis:before {
+	content: "\f148";
+}
+.pbmit-xcoach-icon-responsibility:before {
+	content: "\f149";
+}
+.pbmit-xcoach-icon-pills:before {
+	content: "\f14a";
+}
+.pbmit-xcoach-icon-illness:before {
+	content: "\f14b";
+}
+.pbmit-xcoach-icon-patient:before {
+	content: "\f14c";
+}
+.pbmit-xcoach-icon-safety:before {
+	content: "\f14d";
+}
+.pbmit-xcoach-icon-stress-management:before {
+	content: "\f14e";
+}
+.pbmit-xcoach-icon-self-confidence:before {
+	content: "\f14f";
+}
+.pbmit-xcoach-icon-successful:before {
+	content: "\f150";
+}
+.pbmit-xcoach-icon-discount:before {
+	content: "\f151";
+}
+.pbmit-xcoach-icon-quality:before {
+	content: "\f152";
+}
+.pbmit-xcoach-icon-placeholder:before {
+	content: "\f153";
+}
+.pbmit-xcoach-icon-envelope:before {
+	content: "\f154";
+}
+.pbmit-xcoach-icon-phone:before {
+	content: "\f155";
+}
+.pbmit-xcoach-icon-up-right-arrow:before {
+	content: "\f156";
+}
+.pbmit-xcoach-icon-up-right-arrow-1:before {
+	content: "\f157";
+}
+.pbmit-xcoach-icon-up-arrow:before {
+	content: "\f158";
+}
+.pbmit-xcoach-icon-left-arrow:before {
+	content: "\f159";
+}
+.pbmit-xcoach-icon-down-arrow:before {
+	content: "\f15a";
+}
+.pbmit-xcoach-icon-right-arrow:before {
+	content: "\f15b";
+}
+.pbmit-xcoach-icon-briefcase:before {
+	content: "\f15c";
+}

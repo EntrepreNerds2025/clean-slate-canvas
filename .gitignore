@@ -16,6 +16,10 @@ dist-ssr
 .nitro
 *.local
 
+# OS files
+.DS_Store
+Thumbs.db
+
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars
@@ -24,7 +28,6 @@ dist-ssr
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
