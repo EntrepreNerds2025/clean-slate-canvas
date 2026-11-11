@@ -1,20 +1,17 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Q Wilson – Inspire, Connect and Captivate" },
+      { name: "description", content: "Q Wilson – Inspire, Connect and Captivate." },
+      { property: "og:title", content: "Q Wilson – Inspire, Connect and Captivate" },
+      { property: "og:description", content: "Q Wilson – Inspire, Connect and Captivate." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Index,
+  beforeLoad: () => {
+    throw redirect({ href: "/index.html" });
+  },
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div className="min-h-screen bg-background" />
-  );
-}
