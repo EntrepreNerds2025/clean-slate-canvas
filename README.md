@@ -1,30 +1,31 @@
-# clean-slate-canvas
+# Pastor Q Wilson
 
-A static mirror of **qswilson.com** (Q Wilson — Inspire, Connect and Captivate),
-captured on 2026-06-21.
+Pastor Q Wilson's website, updated from `L:\dev\pastor-q-site`.
 
-## What this is
-A faithful, self-contained static snapshot of the live WordPress site. All HTML
-pages, CSS, JavaScript, images, and fonts are stored locally and internal asset
-links have been rewritten to relative paths, so the site renders offline and can
-be hosted on any static web host (GitHub Pages, Netlify, Vercel, S3, etc.).
+The homepage presents his ministry, wedding officiating, speaking engagements,
+and booking information in a responsive, single-page design.
 
 ## Structure
-- `index.html` — homepage
-- `contact-us/`, `service/`, `service-category/`, `category/`, `2023/...` — pages
-- `wp-content/`, `wp-includes/` — themes, plugins, uploads, scripts, styles
 
-## Notes
-- This is a STATIC copy. WordPress dynamic features (contact form submission,
-  search, comments) won't process server-side.
-- A few links point back to the live site for endpoints that cannot be made
-  static: RSS feeds (`/feed/`), the REST API (`/wp-json/`), `xmlrpc.php`, and
-  tag/author archive pages that weren't part of the capture.
-- Directory-style page links (e.g. `/service/public-speaking/`) resolve to their
-  `index.html` automatically when served by a web server.
+- `public/index.html` — homepage, including its styles and interactions.
+- `public/assets/` — homepage images and logo.
+- `src/routes/index.tsx` — TanStack Start route redirecting `/` to `/index.html`.
+- Other directories under `public/` retain the previous site's pages and assets.
 
 ## Run locally
+
+For the static website:
+
+```sh
+python -m http.server 8000 --directory public
 ```
-python3 -m http.server 8000
-# then open http://localhost:8000
-```
+
+For the Lovable/TanStack application, install dependencies with `bun install`,
+then run `bun run dev`. Build with `bun run build`.
+
+## Booking inquiries
+
+The homepage form opens the visitor's email app with an inquiry addressed to
+`pastorq@torontoic.com`. The visitor must send that email to complete the inquiry.
+Google Fonts requires an internet connection; the stylesheet includes system
+font fallbacks.
