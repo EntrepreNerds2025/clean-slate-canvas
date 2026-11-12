@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Public contact submissions use a validated TanStack server route and Lovable Cloud storage so privileged credentials never reach browser code.
+- App emails use Lovable-managed React Email templates and feature-specific server-side triggers; never expose a generic browser-callable send endpoint.

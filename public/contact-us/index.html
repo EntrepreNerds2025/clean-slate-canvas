@@ -418,9 +418,7 @@ Saturday to Sunday - Closed</div>	</div>
 							<div class="elementor-shortcode">
 <div class="wpcf7 no-js" id="wpcf7-f50-p83-o1" lang="en-US" dir="ltr" data-wpcf7-id="50">
 <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-<form action="https://api.web3forms.com/submit" method="POST" class="pbmit-contact-form-el" aria-label="Contact form">
-<!-- Web3Forms: replace the value below with the access key emailed to you from https://web3forms.com (enter pastorq@torontoic.com as the destination) -->
-                <input type="hidden" name="access_key" value="646468e6-792e-460b-934a-56f0f55de4fe">
+<form id="contact-form" action="/api/public/contact" method="POST" class="pbmit-contact-form-el" aria-label="Contact form">
 <input type="hidden" name="from_name" value="QSWilson.com Contact Form">
 <input type="checkbox" name="botcheck" style="display:none !important;" tabindex="-1" autocomplete="off">
 
@@ -428,13 +426,13 @@ Saturday to Sunday - Closed</div>	</div>
 	<div class="row">
 		<div class="col-sm-12 col-md-6">
 			<div class="input-group">
-				<p><span class="wpcf7-form-control-wrap" data-name="name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name" value="" type="text" name="name" /></span>
+				<p><span class="wpcf7-form-control-wrap" data-name="name"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name" value="" type="text" name="name" maxlength="100" required /></span>
 				</p>
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-6">
 			<div class="input-group">
-				<p><span class="wpcf7-form-control-wrap" data-name="email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" value="" type="email" name="email" /></span>
+				<p><span class="wpcf7-form-control-wrap" data-name="email"><input size="40" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" value="" type="email" name="email" maxlength="255" required /></span>
 				</p>
 			</div>
 		</div>
@@ -442,13 +440,13 @@ Saturday to Sunday - Closed</div>	</div>
 	<div class="row">
 		<div class="col-sm-12 col-md-6">
 			<div class="input-group">
-				<p><span class="wpcf7-form-control-wrap" data-name="phone"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Phone" value="" type="text" name="phone" /></span>
+				<p><span class="wpcf7-form-control-wrap" data-name="phone"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Phone" value="" type="text" name="phone" maxlength="40" required /></span>
 				</p>
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-6">
 			<div class="input-group">
-				<p><span class="wpcf7-form-control-wrap" data-name="subject"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Subject" value="" type="text" name="subject" /></span>
+				<p><span class="wpcf7-form-control-wrap" data-name="subject"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Subject" value="" type="text" name="subject" maxlength="150" required /></span>
 				</p>
 			</div>
 		</div>
@@ -456,7 +454,7 @@ Saturday to Sunday - Closed</div>	</div>
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="input-group input-textarea">
-				<p><span class="wpcf7-form-control-wrap" data-name="message"><textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="How can we help you? Feel free to get in touch!" name="message"></textarea></span>
+				<p><span class="wpcf7-form-control-wrap" data-name="message"><textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="How can we help you? Feel free to get in touch!" name="message" required></textarea></span>
 				</p>
 			</div>
 		</div>
@@ -468,8 +466,38 @@ Saturday to Sunday - Closed</div>	</div>
 			</p>
 		</div>
 	</div>
-</div><div class="wpcf7-response-output" aria-hidden="true"></div>
+</div><div id="contact-form-status" class="wpcf7-response-output" role="status" aria-live="polite"></div>
 </form>
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('contact-form-status');
+  if (!form || !status) return;
+
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    var button = form.querySelector('button[type="submit"], button:not([type])');
+    if (button) button.disabled = true;
+    status.textContent = 'Sending your message…';
+
+    try {
+      var response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      var result = await response.json();
+      if (!response.ok) throw new Error(result.error || 'Your message could not be sent. Please try again.');
+      form.reset();
+      status.textContent = 'Thank you! Your message has been received.';
+    } catch (error) {
+      status.textContent = error.message || 'Your message could not be sent. Please try again.';
+    } finally {
+      if (button) button.disabled = false;
+    }
+  });
+})();
+</script>
 </div>
 </div>
 						</div>
