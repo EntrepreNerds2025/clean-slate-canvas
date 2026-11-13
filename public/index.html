@@ -442,16 +442,15 @@ footer .bottom { display: flex; justify-content: space-between; flex-wrap: wrap;
 </section>
 
 <section class="watch" id="watch" aria-label="Watch">
-  <a href="https://www.youtube.com/watch?v=SZEflIVnhH8" target="_blank" rel="noopener">
+  <a href="https://vimeo.com/935423822" id="watch-open" aria-haspopup="dialog">
     <img src="/assets/portrait-lounge.webp" alt="Pastor Q Wilson in a dark suit, seated and smiling">
     <div class="inner">
       <span class="eyebrow">Watch</span>
       <h2>Hear Q for <em>yourself.</em></h2>
       <p class="lede">The best way to know if Q is right for your event is to see him in action.</p>
-      <span class="play"><i aria-hidden="true"></i>Play on YouTube</span>
+      <span class="play"><i aria-hidden="true"></i>Watch the video</span>
     </div>
   </a>
-  <div class="wrap"><p class="alt" style="padding: 18px 0 0;">Also on <a href="https://vimeo.com/935423822" target="_blank" rel="noopener">Vimeo</a>.</p></div>
 </section>
 
 <section class="ministry" id="ministry">
@@ -582,6 +581,18 @@ footer .bottom { display: flex; justify-content: space-between; flex-wrap: wrap;
     window.location.href = href;
   });
 })();
+</script>
+<div id="video-lightbox" role="dialog" aria-modal="true" aria-label="Video" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:24px">
+  <button type="button" id="video-close" aria-label="Close video" style="position:absolute;top:16px;right:20px;background:none;border:0;color:#fff;font-size:40px;line-height:1;cursor:pointer">&times;</button>
+  <div style="width:min(1100px,100%);aspect-ratio:16/9"><iframe id="video-frame" title="Pastor Q Wilson video" style="width:100%;height:100%;border:0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+</div>
+<script>
+(function(){var b=document.getElementById('video-lightbox'),f=document.getElementById('video-frame');
+function close(){b.style.display='none';f.src='';}
+document.getElementById('watch-open').addEventListener('click',function(e){e.preventDefault();f.src='https://player.vimeo.com/video/935423822?autoplay=1';b.style.display='flex';});
+document.getElementById('video-close').addEventListener('click',close);
+b.addEventListener('click',function(e){if(e.target===b)close();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
 </script>
 </body>
 </html>
