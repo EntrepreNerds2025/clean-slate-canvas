@@ -92,13 +92,27 @@ export const Route = createFileRoute("/api/public/contact")({
           }
 
           const { botcheck: _botcheck, ...submission } = parsed.data;
-          const { error: insertError } = await supabaseAdmin
+          const { data: inserted, error: insertError } = await supabaseAdmin
             .from("contact_submissions")
-            .insert({ ...submission, ip_hash: ipHash });
+            .insert({ ...submission, ip_hash: ipHash })
+            .select("id")
+            .single();
 
           if (insertError) {
             console.error("Contact submission insert failed.", { code: insertError.code });
             return respond({ ok: false, error: "Your message could not be saved. Please try again." }, 500);
+          }
+
+          // Notify the owner. The message is already saved, so a send failure
+          // (e.g. domain still verifying) must not fail the visitor's submission.
+          try {
+            const { sendTemplateEmail } = await import("@/lib/email-templates/send-email");
+            await sendTemplateEmail("contact-owner-notification", "pastorq@torontoic.com", {
+              templateData: submission,
+              idempotencyKey: `contact-owner-${inserted.id}`,
+            });
+          } catch (sendError) {
+            console.error("Owner notification email failed.", sendError);
           }
 
           return respond({ ok: true }, 201);
